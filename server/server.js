@@ -1,6 +1,7 @@
 require('./config/config');
 
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 
 const bodyParser = require('body-parser');
@@ -11,9 +12,15 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+mongoose.connect('mongodb://localhost:27017/my_database', (err, resp) => {
+    if (err) throw err;
+    console.log("base levantada");
+
+});
+
 
 app.get('/usuario', function(req, res) {
-    res.json('get Usuario :) LOCALddddd!!!');
+    res.json('get Usuario :) prueba para heroku 1');
 });
 
 app.post('/usuario', function(req, res) {
