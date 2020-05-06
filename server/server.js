@@ -20,7 +20,7 @@ mongoose.connect('mongodb://localhost:27017/my_database', (err, resp) => {
 
 
 app.get('/usuario', function(req, res) {
-    res.json('get Usuario :) prueba para heroku 1');
+    res.json('get Usuario :) prueba para heroku 1 Local ...');
 });
 
 app.post('/usuario', function(req, res) {
